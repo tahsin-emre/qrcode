@@ -24,11 +24,16 @@ class _HomePageState extends State<HomePage> {
         title: const Text('Barkod Okuyucu ve Oluşturucu'),
       );
 
-  get buildBody => Center(
-        child: ElevatedButton(
-          onPressed: () => scanBarcode(),
-          child: const Text('Oku'),
-        ),
+  get buildBody => Column(
+        children: [
+          Text(barcode),
+          Center(
+            child: ElevatedButton(
+              onPressed: () => scanBarcode(),
+              child: const Text('Oku'),
+            ),
+          ),
+        ],
       );
 
   Future<void> scanBarcode() async {
